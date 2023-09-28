@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public GameManager gameManager;
+    public bool is Dead = false;
     public float velocity = 2.4f;
-
     private Rigidbody2D rigidbody;
     // Start is called before the first frame update
     void Start()
@@ -19,5 +20,10 @@ public class Player : MonoBehaviour
         if(Input.GetMouseButtonDown(0)){
             rigidbody.velocity = Vector2.up * velocity;
         }
+
+    }
+    private void onCollisionEnter2D(Collision2D other) {
+        isDead =true;
+        gameManager.GameOver();
     }
 }
