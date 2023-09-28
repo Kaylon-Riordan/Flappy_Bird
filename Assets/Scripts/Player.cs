@@ -5,25 +5,26 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public GameManager gameManager;
-    public bool is Dead = false;
+    public bool isDead = false;
     public float velocity = 2.4f;
-    private Rigidbody2D rigidbody;
+    private Rigidbody2D rBody;
     // Start is called before the first frame update
     void Start()
     {
-        rigidbody = GetComponent<Rigidbody2D>();
+        rBody = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
         if(Input.GetMouseButtonDown(0)){
-            rigidbody.velocity = Vector2.up * velocity;
+            rBody.velocity = Vector2.up * velocity;
         }
 
     }
     private void onCollisionEnter2D(Collision2D other) {
-        isDead =true;
+        isDead = true;
         gameManager.GameOver();
     }
+    //asdasdas
 }

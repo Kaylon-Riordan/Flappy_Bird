@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using TMpro;
+using TMPro;
 using UnityEditor.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public GameObject startButton;
     public Player player;
     public TMP_Text gameOverCountdown;
+    public float countTimer = 5;
     // Start is called before the first frame update
     void Start()
     {
